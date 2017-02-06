@@ -1,0 +1,11 @@
+<ul id="todo-list" class="todo-list">
+    {{#each todos as |todo|}}
+    <li>
+        <div class="view">
+            <input type="checkbox" class="toggle">
+            <label>{{todo.todoValue}}</label>
+            <button class="destroy"></button>
+        </div>
+    </li>
+    {{/each}}
+</ul>
