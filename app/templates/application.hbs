@@ -11,9 +11,16 @@
             </span>
             <ul id="filters">
                 <li>
-                    <a>All</a>
+                    {{#link-to "index"}}All{{/link-to}}
+                </li>
+                <li>
+                    {{#link-to "active"}}Active{{/link-to}}
+                </li>
+                <li>
+                    {{#link-to "completed"}}Completed{{/link-to}}
                 </li>
             </ul>
+            <button id="clear-completed">Clear completed</button>
         {{/if}}
     </footer>
 </section>

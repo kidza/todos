@@ -1,10 +1,10 @@
 <ul id="todo-list" class="todo-list">
     {{#each todos as |todo|}}
-    <li>
+    <li class={{if todo.completed "completed" ""}}>
         <div class="view">
-            <input type="checkbox" class="toggle">
+            <input type="checkbox" class="toggle" checked={{todo.completed}} onchange={{action "updateCompleted" todo}}>
             <label>{{todo.todoValue}}</label>
-            <button class="destroy"></button>
+            <button {{action "deleteTodo" todo}} class="destroy"></button>
         </div>
     </li>
     {{/each}}
