@@ -8,6 +8,11 @@ export default Ember.Component.extend({
         },
         updateCompleted(todo, e) {
         	todo.set('completed', e.target.checked);
+        },
+        startEditing(todo, e) {
+        	/*if (e.target.key == 'Enter') {
+
+        	}*/
         }
 	}
 		

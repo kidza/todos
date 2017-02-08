@@ -7,7 +7,7 @@
     <footer id="footer">
         {{#if model.length gt 0}}
             <span id="todo-count">
-                <strong>{{model.length}}</strong> items left
+                <strong>{{remaining.length}}</strong> items left
             </span>
             <ul id="filters">
                 <li>
@@ -20,7 +20,7 @@
                     {{#link-to "completed"}}Completed{{/link-to}}
                 </li>
             </ul>
-            <button id="clear-completed">Clear completed</button>
+            <button {{action "clearCompleted"}} id="clear-completed">Clear completed</button>
         {{/if}}
     </footer>
 </section>

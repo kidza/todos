@@ -3,9 +3,10 @@
     <li class={{if todo.completed "completed" ""}}>
         <div class="view">
             <input type="checkbox" class="toggle" checked={{todo.completed}} onchange={{action "updateCompleted" todo}}>
-            <label>{{todo.todoValue}}</label>
+            <label ondblclick={{action "startEditing" todo}}>{{todo.todoValue}}</label>
             <button {{action "deleteTodo" todo}} class="destroy"></button>
         </div>
+        
     </li>
     {{/each}}
 </ul>
