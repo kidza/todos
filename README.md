@@ -1,7 +1,6 @@
 # todos
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Updated Todo Ember.js example from http://todomvc.com. The biggest change is the use of Ember Data for models.      
 
 ## Prerequisites
 

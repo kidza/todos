@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
                 if (item.get('completed') == true) {
                     item.deleteRecord(item);
                 }
-                
+
             });
             //this.set('model', this.get('store').peekAll('todo'));
             //this.get('model').removeObjects(completedTodos);
