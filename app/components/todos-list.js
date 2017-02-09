@@ -10,10 +10,24 @@ export default Ember.Component.extend({
         	todo.set('completed', e.target.checked);
         },
         startEditing(todo, e) {
-        	/*if (e.target.key == 'Enter') {
-
-        	}*/
+            this.element.querySelector('li#'+todo.id).classList.add('editing');
+            //classList.remove('class');
+        },
+        handleKeydown(todo, e) {
+            if (e.key === 'Enter') {
+               e.target.blur();
+            } else if (e.keyCode === 27) {
+                this.removeEditingClass(todo.id);
+            }
+        },
+        doneEditing(todo, e) {
+            todo.set('todoValue', e.target.value);
+            this.removeEditingClass(todo.id);
+            
         }
-	}
+	},
+    removeEditingClass(id) {
+        this.element.querySelector('li#'+id).classList.remove('editing');
+    }
 		
 });

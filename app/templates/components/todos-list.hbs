@@ -1,12 +1,12 @@
 <ul id="todo-list" class="todo-list">
     {{#each todos as |todo|}}
-    <li class={{if todo.completed "completed" ""}}>
+    <li class={{if todo.completed "completed" ""}} id="{{todo.id}}">
         <div class="view">
             <input type="checkbox" class="toggle" checked={{todo.completed}} onchange={{action "updateCompleted" todo}}>
             <label ondblclick={{action "startEditing" todo}}>{{todo.todoValue}}</label>
             <button {{action "deleteTodo" todo}} class="destroy"></button>
         </div>
-        
+        <input type="text" class="edit" value={{todo.todoValue}} onblur={{action "doneEditing" todo}} onkeydown={{action "handleKeydown" todo}} autofocus>
     </li>
     {{/each}}
 </ul>
