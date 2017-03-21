@@ -5,15 +5,12 @@ export default Ember.Controller.extend({
     actions: {
         createTodo(e) {
             if (e.key === 'Enter' && e.target.value != "") {
-                console.log(this.get('model'));
                 let todo = this.get('store').createRecord('todo', {
                     todoValue: e.target.value,
                     completed: false
                 });
-                console.log(this.get('model'));
-                todo = todo.save().then(function(savedTodo){
-                    console.log(savedTodo);
-                });
+                todo.save();
+                    
                 // todo.set('id', Ember.guidFor(todo));
                 e.target.value = '';
             }
@@ -23,6 +20,7 @@ export default Ember.Controller.extend({
             this.get('model').forEach(function(item) {
                 if (item.get('completed') == true) {
                     item.deleteRecord(item);
+                    item.save();
                 }
 
             });
