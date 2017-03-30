@@ -1,0 +1,10 @@
+<section id="todoapp">
+	{{input value=newPhonebook.firstname placeholder="First Name"}}
+	{{input value=newPhonebook.lastname placeholder="Last Name"}}
+	{{input value=newPhonebook.phonenumber placeholder="Phone Number"}}
+	<div>
+		<input type="submit" value="Save" {{action "submitContactPhonebook" newPhonebook}}>
+	</div>
+</section>
+
+{{outlet}}
