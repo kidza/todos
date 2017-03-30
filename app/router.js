@@ -7,8 +7,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('active');
-  this.route('completed');
+  // this.route('active');
+  // this.route('completed', function() {
+  //   this.route('test');
+  // });
+  this.route('phonebook', function() {});
+  this.route('todos', function() {
+    this.route('active');
+    this.route('completed');
+  });
 });
 
 export default Router;

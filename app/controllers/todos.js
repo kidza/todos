@@ -9,7 +9,9 @@ export default Ember.Controller.extend({
                     todoValue: e.target.value,
                     completed: false
                 });
-                todo.set('id', Ember.guidFor(todo));
+                todo.save();
+                    
+                // todo.set('id', Ember.guidFor(todo));
                 e.target.value = '';
             }
         },
@@ -18,6 +20,7 @@ export default Ember.Controller.extend({
             this.get('model').forEach(function(item) {
                 if (item.get('completed') == true) {
                     item.deleteRecord(item);
+                    item.save();
                 }
 
             });
